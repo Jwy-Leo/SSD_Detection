@@ -1,0 +1,1 @@
+python train_ssd.py --dataset_type voc --net mb2-ssd-lite --base_net models/mb2-imagenet-71_8.pth --scheduler cosine --lr 0.01 --t_max 200 --validation_epochs 5 --num_epochs 500 --datasets $1 --validation_dataset $2 --batch_size 64 

@@ -1,0 +1,43 @@
+Datasets: 
+  voc:
+    train_image_path : "" 
+    train_anno_path : ""
+    val_image_path : "" 
+    val_anno_path : "" 
+    test_image_path : ""    
+    test_anno_path : ""    
+  coco:
+    train_image_path : "../../dataset/datasets/coco/train2017"
+    train_anno_path : "../../dataset/datasets/coco/annotations/instances_train2017.json"
+    val_image_path : "../../dataset/datasets/coco/val2017"
+    val_anno_path : "../../dataset/datasets/coco/annotations/instances_val2017.json"
+    test_image_path : ""
+    test_anno_path : ""
+  ecp:
+    train_image_path : "../../dataset/datasets/ECP_subset/ECP/day/img/train"
+    train_anno_path : "../../dataset/datasets/ECP_subset/ECP/day/labels/train"
+    val_image_path : "../../dataset/datasets/ECP_subset/ECP/day/img/val"
+    val_anno_path : "../../dataset/datasets/ECP_subset/ECP/day/labels/val"
+    test_image_path : ""
+    test_anno_path : ""
+Training_hyperparam:
+  lr: 0.01
+  lr_scheduler: "cosine"    # multi-step
+  lr_scheduler_param:
+    cosine:
+      t_max: 121
+    multi-step:
+      milestones: "81,100"  
+      gamma: 0.37
+  momentum: 0.9
+  weighted_decay: 0.0006
+  base_net_lr: None
+  extra_layers_lr: None
+data_preprocess_strategy:
+  balance_data: False
+detection_model:
+  model_architecture: "SSD"
+  image_resolution: 300
+  backbone: "MobilenetV2"
+  width_mult: 1.0          # MobileNet setting
+
